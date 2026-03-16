@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Các điều khiển</title>
+</head>
+<body>
+    <h1>Các điều khiển</h1>
+    <form action="" method="post">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required 
+                placeholder="Nhập tên đăng nhập của bạn" size="30">
+        </div>
+
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required 
+                placeholder="Nhập email của bạn" size="30">
+        </div>
+
+        <div>
+            <label for="birthDay">Ngày sinh:</label>
+            <input type="date" id="birthDay" name="birthDay">
+        </div>
+
+        <div>
+            <label for="color">Màu yêu thích:</label>
+            <input type="color" id="color" name="color" value="#ff0000">
+        </div>
+
+        <div>
+            <label for="gioiTinh">Giới tính:</label>
+            <input type="radio" id="nam" name="gioiTinh" value="nam" checked>
+            <label for="nam">Nam</label>
+            <input type="radio" id="nu" name="gioiTinh" value="nu">
+            <label for="nu">Nữ</label>
+            <input type="radio" id="khac" name="gioiTinh" value="khac">
+            <label for="khac">Khác</label>
+        </div>
+
+        <div>
+            <label for="soThich">Sở thích:</label>
+            <input type="checkbox" id="theThao" name="soThich" value="theThao">
+            <label for="theThao">Thể thao</label>
+            <input type="checkbox" id="amNhac" name="soThich" value="amNhac" checked>
+            <label for="amNhac">Âm nhạc</label>
+            <input type="checkbox" id="duLich" name="soThich" value="duLich">
+            <label for="duLich">Du lịch</label>
+            <input type="checkbox" id="muaSam" name="soThich" value="muaSam" checked>
+            <label for="muaSam">Mua sắm</label>
+        </div>
+
+        <div>
+            <label for="tinhThanh">Chọn tỉnh thành:</label>
+            <select id="tinhThanh" name="tinhThanh">
+                <option value="">-- Chọn tỉnh thành --</option>
+                <option value="hanoi">Hà Nội</option>
+                <option value="hcm">Hồ Chí Minh</option>
+                <option value="danang">Đà Nẵng</option>
+            </select>
+        </div>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
