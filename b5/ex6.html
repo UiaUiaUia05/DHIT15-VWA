@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout blog chuẩn</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #111;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        box-sizing: border-box;
+        z-index: 1000;
+      }
+
+      .logo {
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+        font-size: 16px;
+      }
+
+      .container {
+        display: flex;
+        max-width: 900px;
+        margin: 80px auto 0;
+        padding: 20px;
+      }
+
+      .sidebar {
+        position: sticky;
+        top: 80px;
+        width: 200px;
+        height: max-content;
+      }
+
+      .sidebar h3 {
+        margin-top: 0;
+        font-size: 18px;
+      }
+
+      .sidebar ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .sidebar li {
+        margin-bottom: 15px;
+        color: #555;
+      }
+
+      .content {
+        flex: 1;
+        padding-left: 40px;
+        border-left: 1px solid #ddd;
+      }
+
+      .content h1 {
+        margin-top: 0;
+        font-size: 28px;
+      }
+
+      .content p {
+        line-height: 1.6;
+        color: #333;
+        margin-bottom: 30px;
+      }
+
+      .post-section {
+        border-bottom: 1px dotted #ccc;
+        padding: 20px 0;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">MyBlog</div>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Posts</a>
+        <a href="#">About</a>
+      </nav>
+    </header>
+
+    <div class="container">
+      <aside class="sidebar">
+        <h3>Danh mục</h3>
+        <ul>
+          <li>HTML/CSS</li>
+          <li>JavaScript</li>
+          <li>React</li>
+          <li>Node.js</li>
+        </ul>
+      </aside>
+
+      <main class="content">
+        <h1>Tiêu đề bài viết</h1>
+        <p>
+          Cuộn xuống để kiểm tra header fixed, sidebar sticky và content scroll.
+        </p>
+
+        <div class="post-section">Đoạn 1...</div>
+        <div class="post-section">Đoạn 2...</div>
+        <div class="post-section">Đoạn 3...</div>
+        <div class="post-section">Đoạn 4...</div>
+        <div class="post-section">Đoạn 5...</div>
+        <div class="post-section">Đoạn 6...</div>
+        <div class="post-section">Đoạn 7...</div>
+        <div class="post-section">Đoạn 8...</div>
+        <div class="post-section">Đoạn 9...</div>
+        <div class="post-section">Đoạn 10...</div>
+      </main>
+    </div>
+  </body>
+</html>
