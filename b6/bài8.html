@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8: Menu Chữ T</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 50px; }
+
+        /* --- Menu Chính --- */
+        .nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: darkgreen;
+            display: inline-flex; /* Để thanh menu không dài hết màn hình */
+        }
+
+        .nav > li {
+            position: relative; /* "Mỏ neo" cho menu con */
+        }
+
+        .nav > li > a {
+            display: block;
+            padding: 15px 25px;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        /* Màu cam cho mục Products */
+        .nav > li > a.active {
+            color: orange;
+        }
+
+        /* --- Menu Con (Sổ xuống) --- */
+        .dropdown {
+            display: none;      /* Ẩn mặc định */
+            position: absolute;
+            top: 100%;          /* Hiện ngay dưới mục cha */
+            left: 0;            /* Căn lề trái bằng lề mục Products */
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: darkgreen;
+            min-width: 200px;   /* Độ rộng của cột dọc */
+        }
+
+        .dropdown li a {
+            display: block;
+            padding: 12px 20px;
+            color: white;
+            text-decoration: none;
+            border-top: 1px solid rgba(255,255,255,0.1); /* Vạch kẻ mờ giữa các mục dọc */
+        }
+
+        /* --- Hiệu ứng Hover --- */
+        .nav > li:hover .dropdown {
+            display: block; /* Hiện menu con khi di chuột vào li cha */
+        }
+
+        .nav > li > a:hover {
+            background-color: #004d00; /* Đổi màu xanh đậm hơn khi hover */
+        }
+
+        .dropdown li a:hover {
+            background-color: #004d00;
+        }
+    </style>
+</head>
+<body>
+
+    <p style="color: red;">Bài 8</p>
+
+    <ul class="nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li>
+            <a href="#" class="active">Products</a>
+            <ul class="dropdown">
+                <li><a href="#">Engineering</a></li>
+                <li><a href="#">Telecom</a></li>
+                <li><a href="#">Energy</a></li>
+                <li><a href="#">Finance</a></li>
+                <li><a href="#">Consultancy</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+
+</body>
+</html>

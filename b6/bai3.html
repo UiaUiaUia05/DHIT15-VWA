@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bài 3</title>
+    <style>
+        .nav{ /* menu chính*/
+            list-style-type: none; /* bỏ chấm sao*/
+            margin: 0;
+            padding: 0;
+            background-color: lightgray;
+            display: inline-flex;
+            font-family: Arial, sans-serif;
+        }
+        .nav> li{
+            position: relative;
+            border-right: 1px solid red;
+        }
+        .nav>li>a{
+            display:block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color:#999;
+        }
+        .sub-menu { /*menu phụ*/
+            display: none; /* ẩn nội dung */
+            position: absolute; /* đè lên nội dung khác */
+            top: 100%; /* xuất hiện dưới thư mục cha */
+            left: 0;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: #d1d1d1;
+            min-width: 250px; /* độ rộng cho menu con */
+            border: 1px solid black;
+        }
+        .sub-menu li a{
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid #bbb;
+            text-align: left;
+        }
+        /*hover*/
+        .nav>li:hover>a{
+            background-color: green;
+            color: white;
+        }
+        .nav>li:hover .sub-menu{
+            display: block;
+        }
+        .sub-menu li a:hover{
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="color: orange;"> Bài 3: Tạo menu đổ xuống</h2>
+    <ul class="nav">
+        <li><a href="#">Trang chủ</a></li>
+        <li>
+            <a href="#">Khóa học</a>
+            <ul class="sub-menu">
+                <li><a href="#">Lập trình web PHP & MySQL</a></li>
+                <li><a href="#">Lập trình web NetCore</a></li>
+                <li><a href="#">Lập trình web Java SpringBoot</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Dịch vụ</a></li>
+        <li><a href="#">Hỗ trợ</a></li>
+        <li><a href="#">Liên hệ</a></li>
+    </ul>
+</body>
+</html>

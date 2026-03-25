@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5: Mega Menu Ngang</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+        
+        .nav-horizontal {
+            list-style: none; padding: 0; margin: 0;
+            background: #888; display: flex;
+        }
+
+        .nav-horizontal > li { position: relative; }
+
+        .nav-horizontal > li > a {
+            display: block; padding: 15px 20px;
+            color: white; text-decoration: none;
+            text-transform: uppercase; font-size: 13px;
+        }
+
+        /* Khi hover vào mục cha */
+        .nav-horizontal > li:hover > a { background: black; }
+
+        /* Vùng Mega Menu */
+        .mega-box {
+            display: none; position: absolute;
+            top: 100%; left: 0; width: 900px; /* Độ rộng bảng */
+            background: white; border: 1px solid #ccc;
+            padding: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 999; display: flex; justify-content: space-between;
+        }
+
+        /* Ẩn hiện */
+        .nav-horizontal > li:hover .mega-box { display: flex; }
+
+        .mega-col { width: 30%; }
+        .mega-col h3 { color: #c0392b; font-size: 16px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        .mega-col ul { list-style: none; padding: 0; }
+        .mega-col ul li { padding: 5px 0; font-size: 13px; color: #555; line-height: 1.6; }
+        .mega-col ul li b { color: black; }
+    </style>
+</head>
+<body>
+
+    <ul class="nav-horizontal">
+        <li><a href="#">Trang chủ</a></li>
+        <li>
+            <a href="#">Các khóa đào tạo <i class="fa-solid fa-caret-down"></i></a>
+            <div class="mega-box">
+                <div class="mega-col">
+                    <h3>Chuyên đề WEB - PHP</h3>
+                    <ul>
+                        <li>Lập trình web với <b>HTML5 - CSS3 - JQuery</b> [36 giờ]</li>
+                        <li>Lập trình web <b>Frontend - ReactJS</b> [75 giờ]</li>
+                    </ul>
+                    <h3>Chuyên đề Mobile</h3>
+                    <ul>
+                        <li>Lập trình Android [120 giờ]</li>
+                        <li>Lập trình iOS [120 giờ]</li>
+                    </ul>
+                </div>
+                <div class="mega-col">
+                    <h3>Chuyên đề JAVA</h3>
+                    <ul>
+                        <li>Lập trình hướng đối tượng Java [40 giờ]</li>
+                        <li>Lập trình Web với <b>Java SpringBoot</b> [276 giờ]</li>
+                    </ul>
+                </div>
+                <div class="mega-col">
+                    <h3>Chuyên đề .NET</h3>
+                    <ul>
+                        <li>Lập trình C# [40 giờ]</li>
+                        <li>Lập trình <b>ASP.NET MVC 5</b> [145 giờ]</li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+        <li><a href="#">Dịch vụ</a></li>
+        <li><a href="#">Liên hệ</a></li>
+    </ul>
+
+</body>
+</html>

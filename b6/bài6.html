@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6: Mega Menu Dọc Đổ Ngang</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+
+        /* --- MENU CHÍNH --- */
+        .sidebar-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 280px;
+            border: 2px solid #d32f2f; /* Viền đỏ bao quanh menu chính */
+            position: relative;
+        }
+
+        .sidebar-menu > li {
+            border-bottom: 1px solid #eee;
+        }
+
+        .sidebar-menu > li > a {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            text-decoration: none;
+            color: #333;
+            transition: 0.3s;
+        }
+
+        /* Định dạng icon và mũi tên */
+        .sidebar-menu i.menu-icon { width: 30px; font-size: 18px; }
+        .arrow-right { margin-left: auto; display: none; } /* Ẩn mũi tên mặc định */
+
+        /* HOVER: Đổi màu nền đỏ, chữ trắng */
+        .sidebar-menu > li:hover > a {
+            background-color: #d32f2f;
+            color: white;
+        }
+        .sidebar-menu > li:hover > a .arrow-right { display: block; } /* Hiện mũi tên */
+        .sidebar-menu > li:hover > a i { color: white !important; }
+
+        /* --- MEGA MENU (Bảng nội dung bên phải) --- */
+        .mega-content {
+            display: none;      /* Mặc định ẩn */
+            position: absolute;
+            left: 100%;         /* Đẩy sang phải 100% */
+            top: -2px;          /* Căn lề cho khớp viền trên */
+            width: 500px;
+            background: white;
+            border: 2px solid #34495e; /* Viền xanh đậm bao quanh bảng con */
+            padding: 15px;
+            z-index: 100;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+
+        }
+
+        /* Hiện bảng khi hover */
+        .sidebar-menu > li:hover .mega-content {
+            display: flex; 
+        }
+
+        /* Chia cột nội dung */
+        .mega-col {
+            flex: 1;
+        }
+
+        .mega-col h3 {
+            font-size: 15px;
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+
+        .mega-col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .mega-col ul li {
+            padding: 5px 0;
+        }
+
+        .mega-col ul li a {
+            text-decoration: none;
+            color: #666;
+            font-size: 13px;
+        }
+
+        /* Icon chấm tròn nhỏ trước mỗi mục con */
+        .mega-col ul li a::before {
+            content: "•";
+            margin-right: 8px;
+            color: #ccc;
+        }
+
+        .mega-col ul li a:hover {
+            color: #d32f2f;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <ul class="sidebar-menu">
+        <li>
+            <a href="#">
+                <i class="fa-solid fa-laptop menu-icon" style="color: #3498db;"></i>
+                Điện máy
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa-solid fa-house-chimney menu-icon" style="color: #2ecc71;"></i>
+                Đồ gia dụng
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa-solid fa-hammer menu-icon" style="color: #e74c3c;"></i>
+                Công cụ & Dụng cụ
+                <span class="arrow-right"><i class="fa-solid fa-chevron-right"></i></span>
+            </a>
+            <div class="mega-content">
+                <div class="mega-col">
+                    <h3>Máy khoan</h3>
+                    <ul>
+                        <li><a href="#">Máy khoan pin</a></li>
+                        <li><a href="#">Máy khoan động lực</a></li>
+                        <li><a href="#">Máy khoan bê tông</a></li>
+                        <li><a href="#">Máy đục bê tông</a></li>
+                        <li><a href="#">Máy khoan từ</a></li>
+                    </ul>
+                </div>
+                <div class="mega-col">
+                    <h3>Máy hàn điện tử</h3>
+                    <ul>
+                        <li><a href="#">Máy hàn que</a></li>
+                        <li><a href="#">Máy cắt Plasma</a></li>
+                        <li><a href="#">Máy hàn Tig</a></li>
+                        <li><a href="#">Máy hàn Mag</a></li>
+                        <li><a href="#">Máy hàn đa năng</a></li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa-solid fa-suitcase-medical menu-icon" style="color: #d32f2f;"></i>
+                Y tế & Sức khỏe
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa-solid fa-dumbbell menu-icon" style="color: #f1c40f;"></i>
+                Thể thao & Ngoài trời
+            </a>
+        </li>
+    </ul>
+
+</body>
+</html>

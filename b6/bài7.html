@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Girl Develop It - About</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
+        
+        /* Banner */
+        .banner { background-color: #ff5a5f; padding: 10px; text-align: left; }
+        .banner h1 { color: white; margin: 0; font-size: 24px; }
+
+        /* Tiêu đề xanh */
+        h2 { color: green; border-bottom: none; margin-top: 30px; }
+
+        /* Paragraph nhấn mạnh */
+        .highlight-orange { color: orange; font-weight: bold; }
+        .italic-orange { color: orange; font-style: italic; }
+
+        /* Table */
+        table { border-collapse: collapse; width: 50%; margin-top: 10px; }
+        table, th, td { border: 1px solid gray; }
+        th, td { padding: 8px; text-align: left; }
+
+        /* Form */
+        form { margin-top: 20px; color: brown; font-weight: bold; }
+        .form-group { margin-bottom: 10px; }
+        fieldset { border: 1px solid gray; padding: 10px; width: 80%; }
+        legend { color: brown; }
+        textarea { width: 300px; height: 50px; }
+
+        /* Footer links */
+        .footer-links { margin-top: 30px; border-top: 1px solid #ccc; padding-top: 10px; }
+        .footer-links a { text-decoration: underline; color: blue; }
+    </style>
+</head>
+<body>
+
+    <div class="banner">
+        <h1>Girl Develop It</h1>
+        <small style="color: white; font-style: italic;">don't be shy. develop it.</small>
+    </div>
+
+    <h2>About</h2>
+    <p>
+        It can be intimidating for women to learn and ask questions when they are in an 
+        <span class="highlight-orange">extreme minority</span>. While open and welcoming, today's budding developer 
+        community is up to <span class="highlight-orange">91% male</span>. If we can empower more females with the 
+        confidence in their technological capabilities <span class="italic-orange">we can begin to change this landscape.</span>
+    </p>
+
+    <h2>Our Locations</h2>
+    <ul>
+        <li>USA
+            <ul>
+                <li><a href="#">New York</a></li>
+                <li><a href="#">Columbus</a></li>
+                <li><a href="#">Austin</a></li>
+                <li><a href="#">Philly</a></li>
+            </ul>
+        </li>
+        <li>World
+            <ul>
+                <li><a href="#">Ottawa</a></li>
+                <li><a href="#">Sydney</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>Upcoming Classes</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Location</th>
+                <th>Topic</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="#">New York</a></td>
+                <td style="color: purple;">JavaScript & jQuery</td>
+            </tr>
+            <tr>
+                <td><a href="#">San Francisco</a></td>
+                <td style="color: purple;">HTML & CSS</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Sign Up!</h2>
+    <form>
+        <div class="form-group">
+            Name: <input type="text" name="name">
+        </div>
+        <div class="form-group">
+            Email: <input type="email" name="email">
+        </div>
+        <div class="form-group">
+            Location: 
+            <select name="location">
+                <option value="sf">San Francisco</option>
+                <option value="ny">New York</option>
+            </select>
+        </div>
+        
+        <fieldset>
+            <legend>Gender:</legend>
+            Female <input type="radio" name="gender" value="female">
+            Male <input type="radio" name="gender" value="male">
+        </fieldset>
+
+        <div class="form-group" style="margin-top: 10px;">
+            Experience:<br>
+            <textarea name="experience"></textarea>
+        </div>
+
+        <button type="submit">Sign Up</button>
+    </form>
+
+    <div class="footer-links">
+        <a href="#">Twitter</a> | <a href="#">Facebook</a> | <a href="#">Flickr</a>
+    </div>
+
+</body>
+</html>
