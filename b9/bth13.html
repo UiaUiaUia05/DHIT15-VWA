@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BT13</title>
+    <style>
+      p {
+        font-size: 1.5rem;
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Chuỗi trong JavaScript</h1>
+    <script>
+      var text = "Hoc Lap Trinh JavaScript tại Devmaster";
+
+      document.write("<p>Chuỗi ban đầu: " + text + "<br><br>");
+      document.write("Độ dài chuỗi: " + text.length + "<br>");
+      document.write("Chữ hoa: " + text.toUpperCase() + "<br>");
+      document.write("Chữ thường: " + text.toLowerCase() + "<br>");
+      document.write("Vị trí chữ 'Trinh': " + text.indexOf("Trinh") + "<br>");
+      document.write("Cắt chuỗi (0-7): " + text.substring(0, 7) + "<br>");
+      document.write(
+        "Thay thế: " + text.replace("JavaScript", "ReactJS") + "<br>",
+      );
+      var words = text.split(" ");
+      document.write("Sau khi tách chuỗi: <br>");
+      for (var i = 0; i < words.length; i++) {
+        document.write(words[i] + "<br>");
+      }
+    </script>
+  </body>
+</html>
