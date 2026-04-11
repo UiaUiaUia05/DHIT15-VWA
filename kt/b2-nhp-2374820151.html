@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài 2-Nguyễn Hiểu Phương</title>
+    <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial;
+}
+
+body {
+  background: #eeeeee;
+  padding: 40px;
+}
+
+.news-section {
+  background: white;
+  max-width: 900px;
+  margin: auto;
+  padding: 18px;
+  border: 1px solid #ccc;
+}
+
+.news-header h2 {
+  font-size: 20px;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.news-header h2::after {
+  content: "";
+  width: 40px;
+  height: 2px;
+  background: green;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.news-content {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.news-main {
+  flex: 2;
+  min-width: 280px;
+}
+
+.news-main img {
+  width: 100%;
+  border-radius: 3px;
+}
+
+.news-main h3 {
+  font-size: 18px;
+  margin: 12px 0;
+}
+
+.date-meta {
+  font-size: 12px;
+  color: green;
+  margin-bottom: 8px;
+}
+
+.news-main p {
+  font-size: 13px;
+  color: #666;
+}
+
+.news-sidebar {
+  flex: 1;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebar-item {
+  display: flex;
+  gap: 10px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.sidebar-item img {
+  width: 100px;
+  height: 70px;
+  object-fit: cover;
+}
+
+.sidebar-text h4 {
+  font-size: 14px;
+}
+
+.sidebar-item:hover img {
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
+@media(max-width:768px){
+  .news-content{
+    flex-direction: column;
+  }
+}
+</style>
+  </head>
+  <body>
+    <div class="news-section">
+      <div class="news-header">
+        <h2>Tin tức</h2>
+      </div>
+
+      <div class="news-content">
+        <div class="news-main">
+          <img src="https://lh3.googleusercontent.com/proxy/66rM3VplrqTaE-rGJGmdqiB-uZMSoeesVxxzsMHijCZY3GS-pRkred2uy7Ow53vrn3n-1WE2IwRjno09nFkdCM_rRkA" alt="Hóa chất" />
+          <h3>Chế phẩm hóa học là gì? Và những điều cần lưu ý khi sử dụng</h3>
+          <div class="date-meta">🕒 06/06/2019</div>
+          <p>
+            NaOH hay còn được gọi dưới cái tên Sodium hydroxide, tên gọi trong
+            hóa học là Natri Hydroxit. Các dạng cấu trúc: xút vảy, xút hạt, xút
+            lỏng....
+          </p>
+        </div>
+
+        <div class="news-sidebar">
+          <div class="sidebar-item">
+            <img src="https://phaohoavietnam.net/wp-content/uploads/2024/06/cay-hoa-lua-cam-tay-phao-hoa-z121-bo-quoc-phong.jpg" alt="Pháo hoa" />
+            <div class="sidebar-text">
+              <h4>Hóa học đằng sau pháo hoa cầm tay</h4>
+              <div class="date-meta">🕒 05/06/2019</div>
+            </div>
+          </div>
+
+          <div class="sidebar-item">
+            <img src="https://lh3.googleusercontent.com/proxy/5mO22COiC0HKZqUZmLthI-wTwukHYPtCKI1yt-xK-VPb3Z8QCm66JY5rHV3EJBEQn_caatLhD1ikIBfmJlnjhHa6HCA" alt="Xút" />
+            <div class="sidebar-text">
+              <h4>Ứng dụng của xút trong công nghiệp - xút chuẩn hàng tốt</h4>
+              <div class="date-meta">🕒 05/06/2019</div>
+            </div>
+          </div>
+
+          <div class="sidebar-item">
+            <img src="https://lh4.googleusercontent.com/proxy/a25_gi7zAD1La8PkBG7Auvv0GUYmcGmXr1lGqk38vM1rD633yu0SX3k6VPws2WnQQGTT6NykJ9SG20Znb9Z--LiFjmU" alt="Sodium" />
+            <div class="sidebar-text">
+              <h4>Cung Cấp Hóa chất Sodium hydroxide 99% - Xút Vảy Trung</h4>
+              <div class="date-meta">🕒 05/06/2019</div>
+            </div>
+          </div>
+
+          <div class="sidebar-item">
+            <img src="https://lh3.googleusercontent.com/proxy/Gj45sKv7bsMHpM_k3Ay84BNwZD7xGtaozFyOlh-1zVoiF0StXJukcV0mxMo7BOlKKlJxoOOOZ8hfbyK4IUHVnaWGF9hjUepH0eaNji1YAvs" alt="Nguy hiểm" />
+            <div class="sidebar-text">
+              <h4>
+                Những lợi ích và mối nguy hiểm khi sử dụng hóa chất XÚT (NaOH)
+              </h4>
+              <div class="date-meta">🕒 05/06/2019</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

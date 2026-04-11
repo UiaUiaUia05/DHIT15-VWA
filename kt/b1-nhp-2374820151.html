@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài 1- Nguyễn Hiểu Phương</title>
+    <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  padding: 35px 15px;
+  background: #f5f5f5;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.section-title h2 {
+  font-size: 22px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 2px;
+  background: green;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.services-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.service-card {
+  width: 300px;
+  height: 240px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+.service-card:hover .card-bg {
+  transform: scale(1.08);
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  transition: 0.3s;
+}
+
+.service-card:hover .card-overlay {
+  background: rgba(0,120,50,0.8);
+}
+
+.card-icon {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 12px;
+}
+
+.card-icon img {
+  width: 40px;
+}
+
+.card-sub {
+  font-size: 12px;
+}
+
+.card-title {
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+.card-btn {
+  padding: 6px 18px;
+  border: 1px solid white;
+  border-radius: 18px;
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.card-btn:hover {
+  background: orange;
+}
+</style>
+  </head>
+
+  <body>
+    <div class="section-title">
+      <h2>Dịch vụ</h2>
+    </div>
+
+    <div class="services-container">
+      <div class="service-card">
+        <img src="https://advantage.vn/wp-content/uploads/2021/08/468179849964-3.jpg" class="card-bg" alt="Vận tải" />
+        <div class="card-overlay">
+          <div class="card-icon">
+            <img src="https://thienminh-autosafety.com/wp-content/uploads/2025/11/icon-xe-o-to-tai-png-e47ab4.webp" alt="Icon" />
+          </div>
+          <p class="card-sub">DỊCH VỤ</p>
+          <h3 class="card-title">VẬN TẢI NỘI ĐỊA</h3>
+          <a href="#" class="card-btn">CHI TIẾT</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="https://interlogistics.com.vn/static/1435/2023/08/15/handshake-investoil-is-major-energy-fuel-world-oil-refineries-are-working-continuously-long-push-economythe-country-s-prosperityshining-bright-colors-create-beautiful.jpg" class="card-bg" alt="Xuất nhập khẩu" />
+        <div class="card-overlay">
+          <div class="card-icon">
+            <img src="https://png.pngtree.com/element_our/20190530/ourlarge/pngtree-electronic-note-icon-design-image_1251457.jpg" alt="Icon" />
+          </div>
+          <p class="card-sub">DỊCH VỤ</p>
+          <h3 class="card-title">UỶ THÁC XUẤT NHẬP KHẨU</h3>
+          <a href="#" class="card-btn">CHI TIẾT</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="https://japan.net.vn/images/stores/2015/06/26/tuvanxuatkhaulaodong.jpg" class="card-bg" alt="Lao động" />
+        <div class="card-overlay">
+          <div class="card-icon">
+            <img src="https://img.freepik.com/vector-cao-cap/bieu-tuong-giao-tiep-noi-chuyen-giua-nguoi-voi-nguoi-cuoc-tro-chuyen-giua-hai-nguoi_260216-150.jpg" alt="Icon" />
+          </div>
+          <p class="card-sub">DỊCH VỤ</p>
+          <h3 class="card-title">TƯ VẤN XUẤT KHẨU LAO ĐỘNG</h3>
+          <a href="#" class="card-btn">CHI TIẾT</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
