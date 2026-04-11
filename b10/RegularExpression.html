@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Regular Expession</title>
+  </head>
+  <body>
+    <script>
+      //Kiểm tra chuỗi có abc
+      let text = "abcdef";
+      let patternAbc = /abc/;
+
+      console.log("Kiểm tra chuỗi có chứa abc:");
+      console.log(patternAbc.test(text));
+
+      //Kiểm tra số
+      let patternnumber = /^\d+$/;
+
+      console.log("Kết quả kiểm tra số:");
+      console.log(patternnumber.test("12345"));
+
+      //Kiểm tra email
+      let email = "example@gmail.com";
+
+      let patternemail = /^[a-zA-Z0-9._]+@[a-z]+\.[a-z]+$/;
+
+      console.log("Kết quả kiểm tra Email:");
+      console.log(patternemail.test(email));
+
+      //Kiểm tra password
+      let password = "Abc123";
+      let patternPassword = /^(?=.*[A-Z])(?=.*\d).{6,}$/;
+
+      console.log("Kết quả kiểm tra Password:");
+      console.log(patternPassword.test(password));
+    </script>
+  </body>
+</html>
