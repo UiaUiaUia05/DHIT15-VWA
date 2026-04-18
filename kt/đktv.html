@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký thành viên</title>
+</head>
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+    }
+    body{
+        font-family: Arial, sans-serif;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        padding: 50px 15px;
+    }
+    .form-container{
+        background: white;
+        width: 500px;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow:0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+    .form-title{
+        color: green;
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+    }
+    .form-group{
+        margin-bottom: 20px;
+    }
+    .form-group label{
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: black;
+    }
+    .form-group input[type="text"],
+    .form-group input[type="password"],
+    .form-group textarea{
+        width: 100%;
+        padding: 5px;
+        border: 1px solid gray;
+        border-radius: 5px;
+        outline: none;
+    }
+    .form-group input:focus,.form-group textarea:focus{
+        border-color: gray;
+    }
+    .hint{
+        font-size: 11px;
+        color: grey;
+        font-style: italic;
+        margin-top: 2px;
+    }
+    .error-msg{
+        color: red;
+        font-size: 12px;
+        margin-top: 3px;
+        display: none;
+    }
+    .radio-check-group{
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        padding-top: 10px;
+    }
+    .btn-box{
+        text-align: center;
+        margin-top: 20px;
+    }
+    .btn-submit{
+        background-color: green;
+        color: white;
+        padding: 10px 40px;
+        border: none;
+        border-radius: 5px;
+        font-size: medium;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .btn-submit:hover{
+        background-color: yellow;
+    }
+    
+</style>
+<body>
+<div class="form-container">
+    <h1 class="form-title">Đăng ký thành viên</h1>
+    <form id="regForm">
+        <div class="form-group">
+            <label>Họ và tên</label>
+            <input type="text" id="fullname"
+        placeholder="Nhập họ và tên">
+        <div class="error-msg"
+        id="err-fullname">Họ và tên không được để trống</div>
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" id="email"
+        placeholder="Nhập email">
+            <p class="hint">Ví dụ: exam@gmail.com hoặc exam@gmail.com.vn/exam@gmail.info</p>
+            <div class="error-msg"
+            id="err-email">Email không được để trống</div>
+        </div>
+        <div class="form-group">
+            <label>Số điện thoại</label>
+            <input type="text" id="phone"
+        placeholder="Nhập Số điện thoại">
+            <p class="hint">Ví dụ: 0912112112 hoặc +84999999999</p>
+            <div class="error-msg"
+            id="err-phone">Số điện thoại không được để trống</div>
+        </div>
+            <div class="form-group">
+            <label>Giới tính</label>
+            <div class="radio-check-group">
+                <label style="font-weight: normal;"><input type="radio" name="gender">Nam</label>
+                <label style="font-weight: normal;"><input type="radio" name="gender">Nữ</label>
+                <label style="font-weight: normal;"><input type="radio" name="gender">Khác</label>
+            </div>
+            </div>
+            <div class="form-group">
+            <label>Sở thích</label>
+            <div class="radio-check-group">
+                <label style="font-weight: normal;"><input type="checkbox">Bóng đá</label>
+                <label style="font-weight: normal;"><input type="checkbox">Âm nhạc</label>
+                <label style="font-weight: normal;"><input type="checkbox">Du lịch</label>
+                <label style="font-weight: normal;"><input type="checkbox">Đọc sách</label>
+            </div>
+            </div>
+            <div class="form-group">
+            <label>Mật khẩu</label>
+            <input type="password" id="password"
+        placeholder="Nhập mật khẩu">
+            <div class="error-msg"
+            id="err-password">Mật khẩu không được để trống</div>
+        </div>
+        <div class="form-group">
+            <label>Xác nhận mật khẩu</label>
+            <input type="password" id="confirm"
+        placeholder="Nhập lại mật khẩu">
+            <div class="error-msg"
+            id="err-confirm">Vui lòng nhập lại mật khẩu</div>
+        </div>
+        <div class="form-group">
+            <label>Địa chỉ</label>
+            <textarea id="address" rows="3"
+        placeholder="Nhập địa chỉ"></textarea>
+        <div class="error-msg"
+        id="err-address">Địa chỉ không được để trống</div>
+        </div>
+        <div class="btn-box">
+            <button type="submit"
+            class="btn-submit">Đăng ký</button>
+        </div>
+    </form>
+</div>
+    <script>
+        document.getElementById('regForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    let isValid = true;
+
+    function validateField(id, errId){
+        let val = document.getElementById(id).value.trim();
+        let errEl = document.getElementById(errId);
+
+        if(val === ""){
+            errEl.style.display = "block";
+            isValid = false;
+        } else {
+            errEl.style.display = "none";
+        } 
+    }
+
+    validateField('fullname','err-fullname');
+    validateField('email','err-email');
+    validateField('phone','err-phone');
+    validateField('password','err-password');
+    validateField('address','err-address');
+
+    let pass = document.getElementById('password').value;
+    let confirm = document.getElementById('confirm').value;
+    let errConfirm = document.getElementById('err-confirm');
+
+    if(confirm === ""){
+        errConfirm.innerText = "Vui lòng nhập lại mật khẩu";
+        errConfirm.style.display = "block";
+        isValid = false;
+    } else if(confirm !== pass){
+        errConfirm.innerText = "Mật khẩu xác nhận không khớp";
+        errConfirm.style.display = "block";
+        isValid = false;
+    } else {
+        errConfirm.style.display = "none";
+    }
+
+    if(isValid){
+        alert("Đăng ký thành công!");
+    }
+});
+</script>
+</body>
+</html>
