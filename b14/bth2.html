@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Thao tác thuộc tính: scr; href; value; setAttribute; getAttribute
+    </title>
+  </head>
+  <body>
+    <h1>DOM thao tác với các thuộc tính của phần tử HTML</h1>
+    <h3>Ví dụ: Thay đổi ảnh</h3>
+    <div id="img">
+      <img
+        id="myImage"
+        scr="https://cdn-media.sforum.vn/storage/app/media/giakhanh/cap%20b%E1%BA%A7u%20tr%E1%BB%9Di/cap-bau-troi-1.jpg"
+        width="200"
+      />
+    </div>
+    <button onclick="changeImage()">Thay đổi ảnh</button>
+    <script>
+      function changeImage() {
+        document.getElementById("myImage").src =
+          "https://cdn2.fptshop.com.vn/unsafe/1920x0/filters:format(webp):quality(75)/2023_11_26_638366159843367754_hinh-nen-bien.png";
+      }
+    </script>
+  </body>
+</html>
