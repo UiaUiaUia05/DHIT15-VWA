@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Len DK - Tiệm Len Handmade</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <div id="category-placeholder"></div>
+    <main class="content">
+        <div class="container">
+            <h1 class="category-title">Danh mục: Len DK</h1>
+            <p class="category-desc">là một loại len có độ dày trung bình (medium-light weight), thường được dùng cho sweaters, scarves,...</p>
+            
+            <!-- BẮT ĐẦU LƯỚI SẢN PHẨM (PHẢI CÓ THẺ NÀY) -->
+                <div class="product-grid">
+                <!-- Sản phẩm 4 -->
+                <div class="product-card">
+                    <img src="images/navy-blue.jpg" id="main-img-4" alt="Sản phẩm">
+
+                    <div class="color-swatches">
+                        <span class="swatch color-navy-blue active" 
+                            onclick="changeImage('main-img-4', 'images/navy-blue.jpg', this, 'btn-4', '4', 'navy')"></span>
+                        <span class="swatch color-pink" 
+                            onclick="changeImage('main-img-4', 'images/pink.png', this, 'btn-4', '4', 'pink')"></span>
+                    </div>
+
+                    <h3>Cuộn len DROPS Merino Extra Fine</h3>
+                    <p class="price">186.000đ</p>
+                    <!-- Nút bấm cập nhật ID và link mặc định -->
+                    <button id="btn-4" class="btn-buy" onclick="location.href='detail.html?id=4&color=navy'">Xem chi tiết</button>
+                </div>
+
+                <!-- Sản phẩm 5 -->
+                <div class="product-card">
+                    <img src="images/purple-orchid.png" id="main-img-5" alt="Sản phẩm">
+
+                    <div class="color-swatches">
+                        <span class="swatch color-orange active" 
+                            onclick="changeImage('main-img-5', 'images/dk-orange.png', this, 'btn-5', '5', 'orange')"></span>
+                        <span class="swatch color-purple-orchid" 
+                            onclick="changeImage('main-img-5', 'images/purple-orchid.png', this, 'btn-5', '5', 'purple')"></span>
+                    </div>
+
+                    <h3>Cuộn len King Cole Merino Blend</h3>
+                    <p class="price">140.000đ</p>
+                    <button id="btn-5" class="btn-buy" onclick="location.href='detail.html?id=5&color=orange'">Xem chi tiết</button>
+                </div>
+
+                <!-- Sản phẩm 6 -->
+                <div class="product-card">
+                    <img src="images/gray-blue.png" id="main-img-6" alt="Sản phẩm">
+
+                    <div class="color-swatches">
+                        <span class="swatch color-gray-blue active" 
+                            onclick="changeImage('main-img-6', 'images/gray-blue.png', this, 'btn-6', '6', 'grayblue')"></span>
+                        <span class="swatch color-hot-pink" 
+                            onclick="changeImage('main-img-6', 'images/hot-pink.png', this, 'btn-6', '6', 'hotpink')"></span>
+                    </div>
+
+                    <h3>Cuộn len King Cole Cottonsoft</h3>
+                    <p class="price">170.000đ</p>
+                    <button id="btn-6" class="btn-buy" onclick="location.href='detail.html?id=6&color=grayblue'">Xem chi tiết</button>              
+                </div> 
+
+            </div>  <! -- kết thúc lưới -- >        
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh toán - Tiệm Len Handmade</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .checkout-container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .checkout-container h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        .btn-checkout {
+            width: 100%;
+            padding: 15px;
+            background-color: #d19275;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-checkout:hover {
+            background-color: #b57a5d;
+        }
+    </style>
+</head>
+<body>
+    <!-- Nơi nạp Header -->
+    <div id="header-placeholder"></div>
+
+    <main class="content">
+        <div class="container">
+    <div class="profile-box">
+        <h2>Thông tin cá nhân</h2>
+        <div id="profile-info">
+            <!-- Thông tin sẽ đổ từ JS vào đây -->
+        </div>
+        <button class="btn-auth" onclick="window.location.href='index.html'">Quay lại cửa hàng</button>
+    </div>
+</div>   
+    </main>
+    
+    <!-- Nơi nạp Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="script.js"></script>
+    <script>
+    window.addEventListener('load', function() {
+        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        const infoDiv = document.getElementById('profile-info');
+
+        if (currentUser) {
+            infoDiv.innerHTML = `
+                <p><strong>Tên tài khoản:</strong> ${currentUser.user}</p>
+                <p><strong>Email:</strong> ${currentUser.email}</p>
+                <p><strong>Mật khẩu:</strong> ********</p>
+            `;
+        } else {
+            window.location.href = 'login.html';
+        }
+    });
+</script>
+</body>
+</html>

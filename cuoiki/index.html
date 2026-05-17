@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tiệm Len - Trang Chủ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <div class="content">
+<section class="hero-banner">
+    <div class="banner-overlay">
+        <div class="container">
+            <h1>Chào mừng đến với thế giới Len</h1>
+            <p>Nơi cung cấp nguyên liệu và sản phẩm đan móc chất lượng cao</p>
+            <button class="btn-buy" onclick="location.href='products.html'">Khám phá ngay</button>
+        </div>
+    </div>
+</section>
+<div id="category-placeholder"></div>
+
+    <div class="container">
+        <h2 style="text-align: center; margin-bottom: 30px;">Sản phẩm nổi bật</h2>
+        <div class="product-grid">
+            <!-- Sản phẩm 1 -->
+            <div class="product-card">
+                    <img src="images/len-vang.png" id="main-img-1" alt="Sản phẩm">
+    
+                    <div class="color-swatches">
+                        <!-- Cập nhật hàm để truyền thêm ID nút (btn-1) và mã màu (vang, cam) -->
+                        <span class="swatch color-yellow active" 
+                              onclick="changeImage('main-img-1', 'images/len-vang.png', this, 'btn-1', '1', 'vang')"></span>
+                        <span class="swatch color-orange" 
+                              onclick="changeImage('main-img-1', 'images/len-cam.jpg', this, 'btn-1', '1', 'cam')"></span>
+                    </div>
+
+                    <h3>Cuộn len mohair Nako Angora Luks</h3>
+                    <p style="color: #d19275; font-weight: bold;">88.000đ</p>
+                    <!-- Nút xem chi tiết có ID để JS cập nhật link -->
+                    <button id="btn-1" class="btn-buy" onclick="location.href='detail.html?id=1&color=vang'">Xem chi tiết</button>
+                </div>                
+
+            <!-- Sản phẩm 2 -->
+            <div class="product-card">
+                    <img src="images/rico-dusty-pink.jpg" id="main-img-8" alt="Sản phẩm">
+                    
+                    <div class="color-swatches">
+                        <span class="swatch color-dusty-pink active" 
+                            onclick="changeImage('main-img-8', 'images/rico-dusty-pink.jpg', this, 'btn-8', '8', 'dustypink')"></span>
+                        <span class="swatch color-lilac" 
+                            onclick="changeImage('main-img-8', 'images/rico-lilac.jpg', this, 'btn-8', '8', 'lilac')"></span>
+                        <span class="swatch color-teal" 
+                            onclick="changeImage('main-img-8', 'images/rico-teal.png', this, 'btn-8', '8', 'teal')"></span>
+                    </div>
+
+                    <h3>Cuộn len Rico Design Chunky Yarn</h3>
+                    <p style="color: #d19275; font-weight: bold;">275.000đ</p>
+                    <button id="btn-8" class="btn-buy" onclick="location.href='detail.html?id=8&color=dustypink'">Xem chi tiết</button>
+            </div>
+            <!-- Sản phẩm 3 -->
+                <div class="product-card">
+                    <img src="images/gray-blue.png" id="main-img-6" alt="Sản phẩm">
+
+                    <div class="color-swatches">
+                        <span class="swatch color-gray-blue active" 
+                            onclick="changeImage('main-img-6', 'images/gray-blue.png', this, 'btn-6', '6', 'grayblue')"></span>
+                        <span class="swatch color-hot-pink" 
+                            onclick="changeImage('main-img-6', 'images/hot-pink.png', this, 'btn-6', '6', 'hotpink')"></span>
+                    </div>
+
+                    <h3>Cuộn len King Cole Cottonsoft</h3>
+                    <p style="color: #d19275; font-weight: bold;">170.000đ</p>
+                    <button id="btn-6" class="btn-buy" onclick="location.href='detail.html?id=6&color=grayblue'">Xem chi tiết</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div id="footer-placeholder"></div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phẩm - Tiệm Len Handmade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body> 
+    <div id="header-placeholder"></div>
+
+    <div class="content">
+        <div class="container">
+            <!-- Nút quay lại -->
+        <div class="back-button-container">
+            <button class="btn-back" onclick="history.back()">
+                <i class="fas fa-arrow-left"></i> ← Quay lại
+            </button>
+        </div>
+            <div class="product-detail-container">
+                <!-- Bên trái: Hình ảnh sản phẩm -->
+                <div class="detail-image-section">
+                    <img src="" id="main-detail-img" alt="Sản phẩm chính">
+                </div>
+
+                <!-- Bên phải: Thông tin sản phẩm -->
+                <div class="detail-info-section">
+                    <h1 id="detail-title">Tên sản phẩm</h1>
+                    <p class="detail-price" id="detail-price">0đ</p>
+                    
+                    <div class="detail-description">
+                        <h3>Mô tả sản phẩm:</h3>
+                        <p id="detail-desc">Đang tải dữ liệu...</p>
+                        <ul id="detail-specs">
+                            <!-- Thông số kỹ thuật sẽ đổ vào đây -->
+                        </ul>
+                    </div>
+                    <!-- Mục chọn size -->
+                    <div class="size-selector">
+                        <h3>Size khác:</h3>
+                        <div class="size-options" id="detail-sizes">
+                            <!-- Các nút size sẽ được JavaScript tự động đổ vào đây -->
+                        </div>
+                    </div>
+                    <!-- Bộ chọn số lượng -->
+                    <div class="quantity-selector">
+                        <label>Số lượng:</label>
+                        <div class="quantity-controls">
+                            <button type="button" onclick="updateQty(-1)">-</button>
+                            <input type="number" id="quantity" value="1" min="1">
+                            <button type="button" onclick="updateQty(1)">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Nút hành động -->
+                    <div class="action-buttons">
+                        <button class="btn-add-cart" onclick="addToCart()">Thêm vào giỏ hàng</button>
+                        <button class="btn-buy-now" onclick="buyNow()">Mua ngay</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+    
+    <!-- Link đến file script chung của bạn -->
+    <script src="script.js"></script>
+
+    <!-- Script xử lý đổ dữ liệu động dựa trên ID và Màu sắc -->
+    <script>
+        const productData = {
+            "1": {
+                name: "Cuộn len mohair Nako Angora Luks",
+                price: "88.000đ",
+                desc: "Dòng len mohair cao cấp nhập khẩu, sợi mềm mịn, nhẹ và giữ ấm cực tốt. Thích hợp để đan móc các loại khăn choàng, áo len thời trang.",
+                specs: ["Thành phần: 80% Mohair, 20% Acrylic", "Trọng lượng: 100g - Chiều dài: 550m"],
+                images: {
+                    "vang": "images/len-vang.png",
+                    "cam": "images/len-cam.jpg"
+                }
+            },
+            "2": {
+                name: "Cuộn len Lana Gatto Silk Mohair Lux Yarn",
+                price: "183.000đ",
+                desc: "Sự kết hợp sang trọng giữa lụa tơ tằm và mohair cao cấp từ Ý, tạo nên độ bóng lụa và sự mềm mại tuyệt đối.",
+                specs: ["Thành phần: 75% Super Kid Mohair, 25% Silk", "Trọng lượng: 25g - Chiều dài: 210m"],
+                images: {
+                    "xanh": "images/blue.jpg",
+                    "tim": "images/dark-lavender.jpg"
+                }
+            },
+            "3": {
+                name: "Cuộn len sợi lông cừu Yarn Wool Lang Merino Lace 400",
+                price: "119.000đ",
+                desc: "Sợi Merino siêu mịn giúp sản phẩm đan móc cực kỳ nhẹ và êm ái, an toàn cho làn da nhạy cảm nhất.",
+                specs: ["Thành phần: 100% Virgin Wool (Merino extrafine)", "Trọng lượng: 50g - Chiều dài: 400m"],
+                images: {
+                    "xam": "images/light-gray.jpg"
+                }
+            },
+            "4": {
+                name: "Cuộn len DROPS Merino Extra Fine",
+                price: "186.000đ",
+                desc: "Sợi len Merino mềm mại, có độ đàn hồi cao, lý tưởng cho các sản phẩm cần sự thoải mái.",
+                specs: ["Thành phần: 100% Wool", "Xuất xứ: EU"],
+                images: { "navy": "images/navy-blue.jpg", "pink": "images/pink.png" }
+            },
+            "5": {
+                name: "Cuộn len King Cole Merino Blend",
+                price: "140.000đ",
+                desc: "Sự pha trộn hoàn hảo mang lại cảm giác ấm áp, ít xù lông.",
+                specs: ["Thành phần: Merino Blend", "Trọng lượng: 50g"],
+                images: { "orange": "images/dk-orange.png", "purple": "images/purple-orchid.png" }
+            },
+            "6": {
+                name: "Cuộn len King Cole Cottonsoft",
+                price: "170.000đ",
+                desc: "Thành phần 100% cotton mềm mại, thấm hút mồ hôi tốt, an toàn cho da em bé.",
+                specs: ["Thành phần: 100% Cotton", "Trọng lượng: 100g"],
+                images: { "grayblue": "images/gray-blue.png", "hotpink": "images/hot-pink.png" }
+            },
+            "7": {
+            name: "Cuộn len Wool Couture Cheeky Chunky",
+            price: "349.000đ",
+            desc: "Dòng len Chunky sợi siêu to, cực kỳ mềm mại, lý tưởng cho các dự án đan móc nhanh như chăn, mũ và áo khoác oversized.",
+            specs: ["Thành phần: 100% Merino Wool", "Trọng lượng: 200g", "Kích thước kim: 10-15mm"],
+            images: {
+                "aquamarine": "images/chunky-aquamarine.png",
+                "lavender": "images/chunky-lavender.png",
+                "cream": "images/chunky-natural-cream.png",
+                "pink": "images/chunky-pink.png"
+            }
+            },
+            "8": {
+                name: "Cuộn len Rico Design Chunky Yarn",
+                price: "275.000đ",
+                desc: "Sợi len pha trộn chất lượng cao, mang lại cảm giác ấm áp và hiện đại với bảng màu pastel tinh tế.",
+                specs: ["Thành phần: 50% Wool, 50% Acrylic", "Trọng lượng: 100g", "Chiều dài: 125m"],
+                images: {
+                    "dustypink": "images/rico-dusty-pink.jpg",
+                    "lilac": "images/rico-lilac.jpg",
+                    "teal": "images/rico-teal.png"
+                }
+            },
+            "9": {
+                name: "Kim đan thẳng 35cm ADDI SINGLE POINTED NEEDLE ART 200-7",
+                price: "286.000đ",
+                images: { "default": "images/kim-dan-thang-35cm-addi.jpg" },
+                desc: "Kim đan cao cấp từ Đức, bề mặt trơn nhẵn giúp len lướt nhẹ nhàng.",
+                
+                sizes: ["2.00mm", "2.50mm", "3.00mm", "3.25mm", "3.50mm", "4.00mm"]
+            },
+            "10": {
+                name: "Kim Đan Tre 2 Đầu ADDI Double Pointed Neddle Bamboo",
+                price: "235.000đ",
+                desc: "Dòng kim đan thẳng cổ điển với bề mặt mạ kim loại cao cấp, giúp sợi len lướt cực nhanh.",
+                specs: ["Chiều dài: 35cm", "Xuất xứ: Đức"],
+                images: { "default": "images/kim-dan-thang-35cm-addi.png" },
+                sizes: ["5.50mm", "6.00mm"]
+            },
+            "11" :{
+            name: "Kim móc Clover Amure Steel Crochet Hook",
+            price: "202.000đ",
+            desc: "Dòng kim chuyên dụng cho chỉ/len sợi nhỏ, đầu kim bằng thép không gỉ và tay cầm nhựa mềm công thái học",
+            images: {"default": "images/kim-moc-clover-amure.png"},
+            size: ["0.60mm","0.75mm","0.90mm","1.00mm","1.25mm","1.5mm","1.75mm"]
+            },
+            "12" :{
+                name: "Bộ Kim móc Clover Amure Steel Crochet Hook Set",
+                price: "894.000đ",
+                desc: "Bộ 5 món của dòng kim móc Clover Amure Steel Crochet Hook",
+                images: {"default": "images/bo-kim-moc-clover-amure.png"},
+            },
+        "13" :{
+            name: "Kéo Cắt Chỉ Mini",
+            price: "21.000đ",
+            desc: "Vật bất ly thân của tín đồ đan móc,may vá,thêu thùa....",
+            images: {"default": "images/keo-cat-chi-mini.jpg"},
+        },
+        "14" :{
+                name: "Kéo cắt chỉ DMC Presentoir+15 ciseaux Eiffel U1038",
+                price: "318.000đ",
+                desc: "là dụng cụ thêu thùa cao cấp, nổi bật với thiết kế mô phỏng Tháp Eiffel, sản xuất tại Italia",
+                images: {"default": "images/keo-cat-chi-dmc.png"},
+            },
+        "15" :{
+            name: "Hộp mắt thú bông nhiều màu",
+            price: "153.000đ",
+            desc: "15 ô với 264 chiếc mắt thú cao cấp",
+            images: {"default": "images/hop-mat-thu-bong.jpg"}
+        },
+        "16" :{
+                name: "Set chỉ cotton làm vòng tay DMC Flags Mouliné Thread Assortment",
+                price: "368.000đ",
+                desc: "Set chỉ cotton làm vòng tay DMC Flags Mouliné Thread Assortment 117FPE24DRAP gồm 12 tép chỉ cotton DMC EMBROIDERY FLOSS 12 SKEINS 8M",
+                images: {"default": "images/set-chi-lam-vong-tay.jpg"}
+            },
+        "17" :{
+                name: "Hộp Nhựa 13cm * 6.5cm",
+                price: "26.000đ",
+                desc: "Hộp nhựa tiện ích mini,giúp bạn đựng các dụng cụ và các phụ kiện nhỏ như cúc áo,kim khâu,hạt trang trí...",
+                images: {"default": "images/hop-nhua.jpg"}
+            },
+        "18" :{
+                name: "Bó hoa len trang trí",
+                price: "150.000đ",
+                desc: " sản phẩm 100% được tạo ra từ bàn tay của các nghệ nhân móc hoa lành nghề",
+                images: {"default": "images/hoa-len-trang-tri.jpg"}
+            },
+        "19" :{
+                name: "Khung thêu kẹp xoay 360 độ Clover Turn Hoop 18cm Art",
+                price: "717.000đ",
+                desc: " là dụng cụ cao cấp của Nhật, thiết kế kẹp bàn giúp thêu bằng hai tay thuận tiện",
+                images: {"default": "images/khung-theu.jpg"}
+            },
+        "20" :{
+                name: "Hộp Gỗ Sồi Đựng Chỉ Thêu Của DMC - Vintage - Style Wooden Chest of DMC art",
+                price: "19.197.000đ",
+                desc: " là một sản phẩm chất lượng cao, được thiết kế đặc biệt để lưu trữ chỉ thêu và phụ kiện liên quan. Hộp được làm từ chất liệu gỗ sồi tự nhiên, tạo nên vẻ đẹp cổ điển và sang trọng.",
+                images: {"default": "images/hop-go-soi-dung-chi.jpg"}
+            }
+        };
+        window.onload = function() {
+            // 1. Đọc tham số id và color từ URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
+            const color = urlParams.get('color');
+
+            if (id && productData[id]) {
+                const product = productData[id];
+
+                // 2. Cập nhật thông tin chữ
+                document.getElementById('detail-title').innerText = product.name;
+                document.getElementById('detail-price').innerText = product.price;
+                document.getElementById('detail-desc').innerText = product.desc;
+                document.title = product.name + " - Tiệm Len Handmade";
+
+                // 3. Cập nhật danh sách thông số
+                const specsList = document.getElementById('detail-specs');
+                specsList.innerHTML = ""; // Xóa nội dung cũ
+                product.specs.forEach(spec => {
+                    let li = document.createElement('li');
+                    li.innerText = spec;
+                    specsList.appendChild(li);
+                });
+
+                // 4. Xử lý ảnh theo màu sắc
+                const imgElement = document.getElementById('main-detail-img');
+                if (color && product.images[color]) {
+                    imgElement.src = product.images[color];
+                } else {
+                    // Nếu không chọn màu hoặc màu không tồn tại, lấy ảnh đầu tiên làm mặc định
+                    imgElement.src = Object.values(product.images)[0];
+                }
+            } else {
+                // Nếu không tìm thấy ID, hiển thị thông báo lỗi nhẹ
+                document.getElementById('detail-desc').innerText = "Rất tiếc, không tìm thấy thông tin sản phẩm.";
+            }
+            // Biến toàn cục để lưu size đang chọn
+        let selectedSize = "";
+
+        function renderSizes(product) {
+            const sizeContainer = document.getElementById('detail-sizes');
+            if (!sizeContainer || !product.sizes) return;
+
+            sizeContainer.innerHTML = ""; // Xóa dữ liệu cũ
+            product.sizes.forEach((size, index) => {
+                const btn = document.createElement('button');
+                btn.innerText = size;
+                btn.classList.add('size-btn');
+                
+                // Mặc định chọn size đầu tiên
+                if (index === 0) {
+                    btn.classList.add('active');
+                    selectedSize = size;
+                }
+
+                btn.onclick = function() {
+                    // Xóa active của tất cả các nút size khác
+                    document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+                    // Thêm active cho nút vừa nhấn
+                    btn.classList.add('active');
+                    selectedSize = size;
+                };
+                
+                sizeContainer.appendChild(btn);
+            });
+        }
+        window.onload = function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id');
+    const product = productData[id];
+
+    if (id && product) {
+        // ... các code đổ tên, giá, ảnh ...
+
+        // Xử lý hiển thị Size
+        const sizeWrapper = document.querySelector('.size-selector'); // Vùng chứa tiêu đề "Size khác"
+        
+        if (product.sizes && product.sizes.length > 0) {
+            // Nếu CÓ size: Hiện vùng chọn size và gọi hàm vẽ các nút
+            sizeWrapper.style.display = "block";
+            renderSizes(product);
+        } else {
+            // Nếu KHÔNG CÓ size: Ẩn hoàn toàn vùng này đi
+            sizeWrapper.style.display = "none";
+            selectedSize = ""; // Reset giá trị size về rỗng
+        }
+    }
+};
+        // Tìm đến phần hiển thị size trong detail.html
+        const sizeWrapper = document.querySelector('.size-selector');
+        const sizeContainer = document.getElementById('detail-sizes');
+
+        if (product.sizes && product.sizes.length > 0) {
+            // Nếu có size: Hiện vùng chọn size và vẽ các nút
+            if (sizeWrapper) sizeWrapper.style.display = "block";
+            renderSizes(product); 
+        } else {
+            // Nếu không có size: Ẩn hoàn toàn
+            if (sizeWrapper) sizeWrapper.style.display = "none";
+            selectedSize = ""; 
+        }
+        };
+    </script>
+</body>
+</html>

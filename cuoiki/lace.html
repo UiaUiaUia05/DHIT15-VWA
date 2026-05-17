@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Len Lace - Tiệm Len Handmade</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <div id="category-placeholder"></div>
+    <main class="content">
+        <div class="container">
+            <h1 class="category-title">Danh mục: Len Lace</h1>
+            <p class="category-desc">Dòng len sợi mảnh cao cấp, phù hợp cho các sản phẩm đan móc ren, khăn trải bàn hoặc áo khoác mỏng.</p>
+            
+            <!-- LƯỚI SẢN PHẨM -->
+            <div class="product-grid">
+                
+                <!-- Sản phẩm 1 -->
+                <div class="product-card">
+                    <img src="images/len-vang.png" id="main-img-1" alt="Sản phẩm">
+    
+                    <div class="color-swatches">
+                        <!-- Cập nhật hàm để truyền thêm ID nút (btn-1) và mã màu (vang, cam) -->
+                        <span class="swatch color-yellow active" 
+                              onclick="changeImage('main-img-1', 'images/len-vang.png', this, 'btn-1', '1', 'vang')"></span>
+                        <span class="swatch color-orange" 
+                              onclick="changeImage('main-img-1', 'images/len-cam.jpg', this, 'btn-1', '1', 'cam')"></span>
+                    </div>
+
+                    <h3>Cuộn len mohair Nako Angora Luks</h3>
+                    <p class="price">88.000đ</p>
+                    <!-- Nút xem chi tiết có ID để JS cập nhật link -->
+                    <button id="btn-1" class="btn-buy" onclick="location.href='detail.html?id=1&color=vang'">Xem chi tiết</button>
+                </div>
+
+                <!-- Sản phẩm 2 -->
+                <div class="product-card">
+                    <img src="images/blue.jpg" id="main-img-2" alt="Sản phẩm">
+                    
+                    <div class="color-swatches">
+                        <span class="swatch color-blue active" 
+                              onclick="changeImage('main-img-2', 'images/blue.jpg', this, 'btn-2', '2', 'xanh')"></span>
+                        <span class="swatch color-dark-lavender" 
+                              onclick="changeImage('main-img-2', 'images/dark-lavender.jpg', this, 'btn-2', '2', 'tim')"></span>
+                    </div>
+
+                    <h3>Cuộn len Lana Gatto Silk Mohair Lux Yarn</h3>
+                    <p class="price">183.000đ</p>
+                    <button id="btn-2" class="btn-buy" onclick="location.href='detail.html?id=2&color=xanh'">Xem chi tiết</button>
+                </div>
+
+                <!-- Sản phẩm 3 -->
+                <div class="product-card">
+                    <img src="images/light-gray.jpg" id="main-img-3" alt="Sản phẩm">
+                    <div class="color-swatches">
+                        <span class="swatch color-light-gray active" 
+                              onclick="changeImage('main-img-3', 'images/light-gray.jpg', this, 'btn-3', '3', 'xam')"></span>
+                    </div>
+                    <h3>Cuộn len sợi lông cừu Yarn Wool Lang Merino Lace 400</h3>
+                    <p class="price">119.000 đ</p>
+                    <button id="btn-3" class="btn-buy" onclick="location.href='detail.html?id=3&color=xam'">Xem chi tiết</button>
+                </div>
+
+            </div> <!-- KẾT THÚC LƯỚI SẢN PHẨM -->
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Len Chunky - Tiệm Len Handmade</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <div id="category-placeholder"></div>
+    <main class="content">
+        <div class="container">
+            <h1 class="category-title">Danh mục: Len Chunky</h1>
+            <p class="category-desc">Loại len có kích thước sợi lớn, dày và trọng lượng nặng hơn so với len thông thường. Ứng dụng rộng rãi trong cả thời trang và trang trí nội thất</p>
+            
+            <!-- BẮT ĐẦU LƯỚI SẢN PHẨM (PHẢI CÓ THẺ NÀY) -->
+            <div class="product-grid">
+                <!-- Sản phẩm 7 -->
+                <div class="product-card">
+                    <img src="images/chunky-aquamarine.png" id="main-img-7" alt="Sản phẩm">
+
+                    <div class="color-swatches">
+                        <span class="swatch color-aquamarine active" 
+                            onclick="changeImage('main-img-7', 'images/chunky-aquamarine.png', this, 'btn-7', '7', 'aquamarine')"></span>
+                        <span class="swatch color-lavender" 
+                            onclick="changeImage('main-img-7', 'images/chunky-lavender.png', this, 'btn-7', '7', 'lavender')"></span>
+                        <span class="swatch color-natural-cream" 
+                            onclick="changeImage('main-img-7', 'images/chunky-natural-cream.png', this, 'btn-7', '7', 'cream')"></span>
+                        <span class="swatch color-pink" 
+                            onclick="changeImage('main-img-7', 'images/chunky-pink.png', this, 'btn-7', '7', 'pink')"></span>    
+                    </div>
+
+                    <h3>Cuộn len Wool Couture Cheeky Chunky</h3>
+                    <p class="price">349.000đ</p>
+                    <button id="btn-7" class="btn-buy" onclick="location.href='detail.html?id=7&color=aquamarine'">Xem chi tiết</button>
+                </div> 
+
+                <!-- Sản phẩm 8 -->
+                <div class="product-card">
+                    <img src="images/rico-dusty-pink.jpg" id="main-img-8" alt="Sản phẩm">
+                    
+                    <div class="color-swatches">
+                        <span class="swatch color-dusty-pink active" 
+                            onclick="changeImage('main-img-8', 'images/rico-dusty-pink.jpg', this, 'btn-8', '8', 'dustypink')"></span>
+                        <span class="swatch color-lilac" 
+                            onclick="changeImage('main-img-8', 'images/rico-lilac.jpg', this, 'btn-8', '8', 'lilac')"></span>
+                        <span class="swatch color-teal" 
+                            onclick="changeImage('main-img-8', 'images/rico-teal.png', this, 'btn-8', '8', 'teal')"></span>
+                    </div>
+
+                    <h3>Cuộn len Rico Design Chunky Yarn</h3>
+                    <p class="price">275.000đ</p>
+                    <button id="btn-8" class="btn-buy" onclick="location.href='detail.html?id=8&color=dustypink'">Xem chi tiết</button>
+                </div>
+            </div> <!-- KẾT THÚC LƯỚI SẢN PHẨM -->
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Len - Tiệm Len Handmade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Nạp Header dùng chung -->
+    <div id="header-placeholder"></div>
+    <div id="category-placeholder"></div>
+    <main class="content">
+        <div class="container">
+            <h1 class="category-title">Len </h1>
+            <p class="category-desc">Len (wool) là loại sợi tự nhiên thu được từ lông của các loài động vật như cừu, dê, thỏ, lạc đà, v.v.. Đây là nguyên liệu truyền thống, quan trọng trong ngành dệt may, đặc biệt nổi tiếng với khả năng giữ ấm và cách nhiệt tuyệt vời cho mùa đông.</p>
+            
+            <!-- Lưới hiển thị các sản phẩm -->
+            <div class="product-grid">
+                <!-- Sản phẩm 1 -->
+                <div class="product-card">
+                    <img src="images/len-vang.png" id="main-img-1" alt="Sản phẩm">
+    
+                    <div class="color-swatches">
+                        <!-- Cập nhật hàm để truyền thêm ID nút (btn-1) và mã màu (vang, cam) -->
+                        <span class="swatch color-yellow active" 
+                              onclick="changeImage('main-img-1', 'images/len-vang.png', this, 'btn-1', '1', 'vang')"></span>
+                        <span class="swatch color-orange" 
+                              onclick="changeImage('main-img-1', 'images/len-cam.jpg', this, 'btn-1', '1', 'cam')"></span>
+                    </div>
+
+                    <h3>Cuộn len mohair Nako Angora Luks</h3>
+                    <p class="price">88.000đ</p>
+                    <!-- Nút xem chi tiết có ID để JS cập nhật link -->
+                    <button id="btn-1" class="btn-buy" onclick="location.href='detail.html?id=1&color=vang'">Xem chi tiết</button>
+                </div>
+
+                <!-- Sản phẩm 2 -->
+                <div class="product-card">
+                    <img src="images/blue.jpg" id="main-img-2" alt="Sản phẩm">
+                    
+                    <div class="color-swatches">
+                        <span class="swatch color-blue active" 
+                              onclick="changeImage('main-img-2', 'images/blue.jpg', this, 'btn-2', '2', 'xanh')"></span>
+                        <span class="swatch color-dark-lavender" 
+                              onclick="changeImage('main-img-2', 'images/dark-lavender.jpg', this, 'btn-2', '2', 'tim')"></span>
+                    </div>
+
+                    <h3>Cuộn len Lana Gatto Silk Mohair Lux Yarn</h3>
+                    <p class="price">183.000đ</p>
+                    <button id="btn-2" class="btn-buy" onclick="location.href='detail.html?id=2&color=xanh'">Xem chi tiết</button>
+                </div>
+
+                <!-- Sản phẩm 3 -->
+                <div class="product-card">
+                    <img src="images/light-gray.jpg" id="main-img-3" alt="Sản phẩm">
+                    <div class="color-swatches">
+                        <span class="swatch color-light-gray active" 
+                              onclick="changeImage('main-img-3', 'images/light-gray.jpg', this, 'btn-3', '3', 'xam')"></span>
+                    </div>
+                    <h3>Cuộn len sợi lông cừu Yarn Wool Lang Merino Lace 400</h3>
+                    <p class="price">119.000 đ</p>
+                    <button id="btn-3" class="btn-buy" onclick="location.href='detail.html?id=3&color=xam'">Xem chi tiết</button>
+                </div>
+
+                <!-- Sản phẩm 4 -->
+                <div class="product-card">
+                    <img src="images/navy-blue.jpg" id="main-img-4" alt="Sản phẩm">
+
+                    <div class="color-swatches">
+                        <span class="swatch color-navy-blue active" 
+                            onclick="changeImage('main-img-4', 'images/navy-blue.jpg', this, 'btn-4', '4', 'navy')"></span>
+                        <span class="swatch color-pink" 
+                            onclick="changeImage('main-img-4', 'images/pink.png', this, 'btn-4', '4', 'pink')"></span>
+                    </div>
+
+                    <h3>Cuộn len DROPS Merino Extra Fine</h3>
+                    <p class="price">186.000đ</p>
+                    <!-- Nút bấm cập nhật ID và link mặc định -->
+                    <button id="btn-4" class="btn-buy" onclick="location.href='detail.html?id=4&color=navy'">Xem chi tiết</button>
+                </div>
+
+                <!-- Sản phẩm 5 -->
+                <div class="product-card">
+                    <img src="images/purple-orchid.png" id="main-img-5" alt="Sản phẩm">
+
+                    <div class="color-swatches">
+                        <span class="swatch color-orange active" 
+                            onclick="changeImage('main-img-5', 'images/dk-orange.png', this, 'btn-5', '5', 'orange')"></span>
+                        <span class="swatch color-purple-orchid" 
+                            onclick="changeImage('main-img-5', 'images/purple-orchid.png', this, 'btn-5', '5', 'purple')"></span>
+                    </div>
+
+                    <h3>Cuộn len King Cole Merino Blend</h3>
+                    <p class="price">140.000đ</p>
+                    <button id="btn-5" class="btn-buy" onclick="location.href='detail.html?id=5&color=orange'">Xem chi tiết</button>
+                </div>
+
+                <!-- Sản phẩm 6 -->
+                <div class="product-card">
+                    <img src="images/gray-blue.png" id="main-img-6" alt="Sản phẩm">
+
+                    <div class="color-swatches">
+                        <span class="swatch color-gray-blue active" 
+                            onclick="changeImage('main-img-6', 'images/gray-blue.png', this, 'btn-6', '6', 'grayblue')"></span>
+                        <span class="swatch color-hot-pink" 
+                            onclick="changeImage('main-img-6', 'images/hot-pink.png', this, 'btn-6', '6', 'hotpink')"></span>
+                    </div>
+
+                    <h3>Cuộn len King Cole Cottonsoft</h3>
+                    <p class="price">170.000đ</p>
+                    <button id="btn-6" class="btn-buy" onclick="location.href='detail.html?id=6&color=grayblue'">Xem chi tiết</button>              
+                </div>
+
+                <!-- Sản phẩm 7 -->
+                <div class="product-card">
+                    <img src="images/chunky-aquamarine.png" id="main-img-7" alt="Sản phẩm">
+
+                    <div class="color-swatches">
+                        <span class="swatch color-aquamarine active" 
+                            onclick="changeImage('main-img-7', 'images/chunky-aquamarine.png', this, 'btn-7', '7', 'aquamarine')"></span>
+                        <span class="swatch color-lavender" 
+                            onclick="changeImage('main-img-7', 'images/chunky-lavender.png', this, 'btn-7', '7', 'lavender')"></span>
+                        <span class="swatch color-natural-cream" 
+                            onclick="changeImage('main-img-7', 'images/chunky-natural-cream.png', this, 'btn-7', '7', 'cream')"></span>
+                        <span class="swatch color-pink" 
+                            onclick="changeImage('main-img-7', 'images/chunky-pink.png', this, 'btn-7', '7', 'pink')"></span>    
+                    </div>
+
+                    <h3>Cuộn len Wool Couture Cheeky Chunky</h3>
+                    <p class="price">349.000đ</p>
+                    <button id="btn-7" class="btn-buy" onclick="location.href='detail.html?id=7&color=aquamarine'">Xem chi tiết</button>
+                </div> 
+
+                <!-- Sản phẩm 8 -->
+                <div class="product-card">
+                    <img src="images/rico-dusty-pink.jpg" id="main-img-8" alt="Sản phẩm">
+                    
+                    <div class="color-swatches">
+                        <span class="swatch color-dusty-pink active" 
+                            onclick="changeImage('main-img-8', 'images/rico-dusty-pink.jpg', this, 'btn-8', '8', 'dustypink')"></span>
+                        <span class="swatch color-lilac" 
+                            onclick="changeImage('main-img-8', 'images/rico-lilac.jpg', this, 'btn-8', '8', 'lilac')"></span>
+                        <span class="swatch color-teal" 
+                            onclick="changeImage('main-img-8', 'images/rico-teal.png', this, 'btn-8', '8', 'teal')"></span>
+                    </div>
+
+                    <h3>Cuộn len Rico Design Chunky Yarn</h3>
+                    <p class="price">275.000đ</p>
+                    <button id="btn-8" class="btn-buy" onclick="location.href='detail.html?id=8&color=dustypink'">Xem chi tiết</button>
+                </div>
+                <!-- Thêm các sản phẩm khác ở đây -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Nạp Footer dùng chung -->
+    <div id="footer-placeholder"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
